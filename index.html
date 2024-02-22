@@ -61,19 +61,36 @@
             <li id="welcomeMessage" class="nav-item ms-1 hidden">
               <div id="welcomeUser"></div>
             </li>
+            <li>
+              <button
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+                type="button"
+                style="width: 250px"
+                class="btn btn-secondary"
+                id="add"
+              >
+                Add product
+              </button>
+            </li>
           </ul>
         </div>
         <form class="d-flex" role="search">
           <input
+            id="search-inp"
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
     </nav>
+
+    <div class="container d-flex gap-5 flex-wrap"></div>
+    <div
+      class="modal fade"
+      id="exampleModal"
 
     <!-- Модалка регистрации -->
     <div
@@ -244,14 +261,18 @@
     <div
       class="modal fade"
       id="logoutModal"
+
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
-    >
+    
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
+
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add product</h1>
             <h1 class="modal-title fs-5" id="exampleModalLabel">Alert</h1>
+
             <button
               type="button"
               class="btn-close"
@@ -260,16 +281,72 @@
             ></button>
           </div>
           <div class="modal-body">
-            Are you sure you want to exit your account?
+
+            <div class="input-group mt-2">
+              <span class="input-group-text">Title</span>
+              <input
+                id="title"
+                type="text"
+                aria-label="First name"
+                class="form-control"
+              />
+            </div>
+            <div class="input-group mt-2">
+              <span class="input-group-text">Description</span>
+              <input
+                id="desc"
+                type="text"
+                aria-label="First name"
+                class="form-control"
+              />
+            </div>
+            <div class="input-group mt-2">
+              <span class="input-group-text">Category</span>
+              <input
+                id="category"
+                type="text"
+                aria-label="First name"
+                class="form-control"
+              />
+            </div>
+            <div class="input-group mt-2">
+              <span class="input-group-text">Price</span>
+              <input
+                id="price"
+                type="number"
+                aria-label="First name"
+                class="form-control"
+              />
+            </div>
+            <div class="input-group mt-2">
+              <span class="input-group-text">Image:</span>
+              <input
+                id="image"
+                type="text"
+                aria-label="First name"
+                class="form-control"
+              />
+            </div>
+
           </div>
           <div class="modal-footer">
             <button
               type="button"
               class="btn btn-secondary"
               data-bs-dismiss="modal"
+              id="close"
             >
               Close
             </button>
+
+            <button id="edit" type="button" class="btn btn-success">
+              Save changes
+            </button>
+            <button id="save" type="button" class="btn btn-primary">
+              Add new product
+            </button>
+            <div></div>
+
             <button
               type="button"
               class="btn btn-primary"
@@ -278,6 +355,7 @@
             >
               Confirm
             </button>
+
           </div>
         </div>
       </div>
