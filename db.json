@@ -39,6 +39,15 @@
       "price": "123321",
       "image": "https://cdn.dribbble.com/users/2351484/screenshots/14640746/media/510f955439a3062fb9e973422bac5184.png?resize=400x300&vertical=center",
       "id": 9
+  "users": [
+    {
+      "username": "Antarah",
+      "email": "slava3032001@gmail.com",
+      "age": "23",
+      "isAdmin": false,
+      "password": "123",
+      "id": 1
+
     }
   ]
 }
