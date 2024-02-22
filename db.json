@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "username": "Antarah",
+      "email": "slava3032001@gmail.com",
+      "age": "23",
+      "isAdmin": false,
+      "password": "123",
+      "id": 1
+    }
+  ]
+}
