@@ -1,3 +1,4 @@
+
 // Connections
 
 const registerConfirm = document.querySelector("#registerConfirm");
@@ -10,6 +11,7 @@ const USERS_API = "http://localhost:8000/users";
 const loginConfirm = document.querySelector("#loginConfirm");
 const logUserInp = document.querySelector("#loginName");
 const logPasswordInp = document.querySelector("#loginPassword");
+
 const loginBtn = document.querySelector("#loginBtn");
 const registerBtn = document.querySelector("#registerBtn");
 const logoutBtn = document.querySelector("#logoutBtn");
