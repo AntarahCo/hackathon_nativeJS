@@ -10,11 +10,12 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="./design/main_style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">JavaScript Store</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -28,12 +29,37 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li id="registerBtn" class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Register</a
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#registerModal"
               >
+                Register
+              </button>
             </li>
-            <li id="loginBtn" class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+            <li id="loginBtn" class="nav-item ms-1">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#loginModal"
+              >
+                Login
+              </button>
+            </li>
+            <li id="logoutBtn" class="hidden nav-item ms-1">
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#logoutModal"
+              >
+                Logout
+              </button>
+            </li>
+            <li id="welcomeMessage" class="nav-item ms-1 hidden">
+              <div id="welcomeUser"></div>
             </li>
             <li>
               <button
@@ -60,10 +86,16 @@
         </form>
       </div>
     </nav>
+
     <div class="container d-flex gap-5 flex-wrap"></div>
     <div
       class="modal fade"
       id="exampleModal"
+
+    <!-- Модалка регистрации -->
+    <div
+      class="modal fade"
+      id="registerModal"
       tabindex="-1"
       aria-labelledby="exampleModalLabel"
       aria-hidden="true"
@@ -71,7 +103,7 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Add product</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
             <button
               type="button"
               class="btn-close"
@@ -80,6 +112,176 @@
             ></button>
           </div>
           <div class="modal-body">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Name</span
+              >
+              <input
+                id="name"
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Email</span
+              >
+              <input
+                id="email"
+                type="email"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Age</span
+              >
+              <input
+                id="age"
+                type="number"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Password</span
+              >
+              <input
+                id="password"
+                type="password"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Confirm Password</span
+              >
+              <input
+                id="passwordConfirm"
+                type="password"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button id="registerConfirm" type="button" class="btn btn-primary">
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модалка логина -->
+
+    <div
+      class="modal fade"
+      id="loginModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Register</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Name</span
+              >
+              <input
+                id="loginName"
+                type="text"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+            <div class="input-group input-group-lg">
+              <span class="input-group-text" id="inputGroup-sizing-lg"
+                >Password</span
+              >
+              <input
+                id="loginPassword"
+                type="password"
+                class="form-control"
+                aria-label="Sizing example input"
+                aria-describedby="inputGroup-sizing-lg"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              id="loginConfirm"
+              type="button"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Модалка логаута -->
+
+    <div
+      class="modal fade"
+      id="logoutModal"
+
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Add product</h1>
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Alert</h1>
+
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+
             <div class="input-group mt-2">
               <span class="input-group-text">Title</span>
               <input
@@ -125,6 +327,7 @@
                 class="form-control"
               />
             </div>
+
           </div>
           <div class="modal-footer">
             <button
@@ -135,6 +338,7 @@
             >
               Close
             </button>
+
             <button id="edit" type="button" class="btn btn-success">
               Save changes
             </button>
@@ -142,10 +346,21 @@
               Add new product
             </button>
             <div></div>
+
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="logoutConfirm"
+              data-bs-dismiss="modal"
+            >
+              Confirm
+            </button>
+
           </div>
         </div>
       </div>
     </div>
+    <div class="messageBox"></div>
   </body>
   <script src="./js/main.js"></script>
   <script
