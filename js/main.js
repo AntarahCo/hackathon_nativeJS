@@ -1,5 +1,7 @@
 // Connections
 
+//tcfsgahjdbajb !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 const registerConfirm = document.querySelector("#registerConfirm");
 const nameInp = document.querySelector("#name");
 const emailInp = document.querySelector("#email");
